@@ -55,7 +55,7 @@ h1{
 .photo{
     border: rgb(35, 59, 88) solid 4px;
     width: 32%; 
-    background-image: url('https://www.interfax.ru/ftproot/photos/photostory/2019/07/09/week4_700.jpg'); /* Заміни на шлях до твого фото */
+    background-image: url('https://masterpiecer-images.s3.yandex.net/1533e2ab82fd11eeb725baea8797b5f2:upscaled'); /* Заміни на шлях до твого фото */
     background-size: cover; 
     background-position: center; 
     height: auto; 
