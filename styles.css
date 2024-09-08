@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+ul li{list-style-type: none;}
+
+h1{
+    text-align: center;
+    font-family: Inter;
+    text-shadow: 10px 10px 12px black;
+
+}
+
+.text{
+    font-family: Inter;
+    font-size: 20px;
+    line-height: 1.5;
+    width: 58%; 
+    margin-right: 2%; 
+}
+
+.headerBackground {
+    background-color: #1C2433; 
+    width: 100%; 
+    height: auto; 
+    color: white; 
+    padding: 20px; 
+}
+
+.footerBackground {
+    background-color: #1C2433; 
+    width: 100%; 
+    color: white; 
+    padding: 20px; 
+}
+  
+.link{
+    color: rgb(175, 201, 224);
+    font-family: Inter;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 600;
+    margin-left: 20px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: rgb(255, 255, 255); 
+}
+
+.photo{
+    border: rgb(35, 59, 88) solid 4px;
+    width: 32%; 
+    background-image: url('https://www.interfax.ru/ftproot/photos/photostory/2019/07/09/week4_700.jpg'); /* Заміни на шлях до твого фото */
+    background-size: cover; 
+    background-position: center; 
+    height: auto; 
+    aspect-ratio: 1 / 1; 
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    padding: 2%; 
+    flex: 1;
+  }
+  
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #1C2433;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
