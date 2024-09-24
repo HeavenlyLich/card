@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Візитка Лемешко</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+      // Функція для переміщення між елементами DOM
+      function traverseDOM(node) {
+        if (!node) return; // Якщо вузла немає, припиняємо роботу
+    
+        let nodeInfo = node.nodeType === 3 ? `Текстовий вузол: "${node.textContent.trim()}"` : `Вузол: ${node.nodeName}`;
+        let action = prompt(`${nodeInfo}. Пройти далі (d), повернутися назад (b), завершити роботу (e)?`, 'd');
+        
+        if (action === 'd') {
+          if (node.firstElementChild) {
+            traverseDOM(node.firstElementChild); // Переходимо до першого дочірнього елемента
+          } else if (node.nextElementSibling) {
+            traverseDOM(node.nextElementSibling); // Переходимо до наступного елемента на тому ж рівні
+          } else {
+            // Якщо немає дочірніх і немає сусідніх вузлів, повертаємось до батьківського і шукаємо його наступного сусіда
+            let parent = node.parentElement;
+            while (parent && !parent.nextElementSibling) {
+              parent = parent.parentElement; // Рухаємося вгору по дереву, якщо немає сусідніх елементів
+            }
+            if (parent && parent.nextElementSibling) {
+              traverseDOM(parent.nextElementSibling); // Знаходимо наступного сусіда
+            } else {
+              alert('Це був останній елемент. Робота завершена.');
+            }
+          }
+        } else if (action === 'b' && node.parentElement) {
+          traverseDOM(node.parentElement); // Повертаємося до батьківського елемента
+        } else if (action === 'e') {
+          alert('Робота завершена.');
+        }
+      }
+    
+      // Викликаємо обхід DOM дерева
+      document.addEventListener('DOMContentLoaded', () => {
+        let startNode = document.body; // Починаємо з елемента <body>
+        traverseDOM(startNode);
+      });
+    </script>
+    
 </head>
 <body>
   <header>
